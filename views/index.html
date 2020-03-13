@@ -1,0 +1,32 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>cy.wait example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  <button id="first" onclick="makeCalls(false)">First finishes first</button>
+  <button id="second" onclick="makeCalls(true)">Second finishes first</button>
+</body>
+</html>
+
+<script>
+  function makeCalls(param) {
+    $.ajax({
+      url: `/test?first=true&delay=${param}`,
+      type: "GET", 
+      success: function(responseData) {
+      },
+      error: console.error
+    })
+    $.ajax({
+      url: `/test?first=false&delay=${param}`,
+      type: "GET", 
+      success: function(responseData) {
+      },
+      error: console.error
+    })
+  }
+</script>

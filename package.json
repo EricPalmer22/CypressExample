@@ -1,0 +1,21 @@
+{
+  "name": "cypress-wait-example",
+  "version": "1.0.0",
+  "description": "Attempting to reproduce cypress wait issue",
+  "main": "index.js",
+  "scripts": {
+    "start-server": "node index.js",
+    "cy:open": "cypress open",
+    "ci": "start-server-and-test start-server http://localhost:3000 cy:open"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "cypress": "^4.1.0",
+    "start-server-and-test": "^1.10.9"
+  }
+}
